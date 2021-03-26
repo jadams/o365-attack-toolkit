@@ -3,7 +3,6 @@
 </div>
 
 <script>
-    var clean = DOMPurify.sanitize("{{.Mail.Body.Content}}");
+    var clean = DOMPurify.sanitize("{{.Mail.BodyContent}}");
     document.getElementById("emailContainer").innerHTML = clean;
-    document.getElementById("mailModalTitle").innerHTML = "{{.Mail.Subject}} <span class='badge badge-primary'>{{.Mail.ReceivedDateTime}}</span>";
 </script>

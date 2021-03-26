@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"o365-attack-toolkit/model"
-	"o365-attack-toolkit/server"
+	"github.com/jadams/o365-attack-toolkit-us/model"
+	"github.com/jadams/o365-attack-toolkit-us/server"
 	"os"
 	"path/filepath"
 
@@ -24,7 +24,7 @@ func main() {
 		log.Fatal(err.Error())
 	}
 
-	//initializeRules()
+	initializeRules()
 	go server.StartExtServer(model.GlbConfig)
 	server.StartIntServer(model.GlbConfig)
 	fmt.Println(model.GlbConfig)
