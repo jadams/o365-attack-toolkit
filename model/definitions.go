@@ -43,7 +43,7 @@ var IntAbout = "/about"
 
 // Microsoft Endpoint URLS
 
-var ApiEndpointRoot = "https://graph.microsoft.com/v1.0"
+var ApiEndpointRoot = "https://graph.microsoft.us/v1.0"
 
 // Outlook - /messages
 // OneDrive - /drives

